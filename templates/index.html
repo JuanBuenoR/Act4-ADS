@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">       
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora Básica</h1>
+        <form action="" method="post">
+            <label>Selecciona el operador:</label>
+        <div class="checkbox-container" id="oper">
+            <label><input type="checkbox" name="oper-s" value="1"> Suma</label>
+            <label><input type="checkbox" name="oper-r" value="2"> Resta</label>
+            <label><input type="checkbox" name="oper-m" value="3"> Multiplicación</label>
+            <label><input type="checkbox" name="oper-d" value="4"> División</label>
+        </div>
+        <div class="input-container">
+            <label for="num1">Escribe un número: <input type="number" id="num1" name="num1"></label>
+            <label for="num2">Escribe un número: <input type="number" id="num2" name="num2"></label>
+        </div>
+        <button type="submit" value="Calcular">Calcular</button> 
+        
+    </form>
+        <div id="resultado">
+            {% if resultado %}
+            <h5>El resultado de la {{ operacion}} entre {{num1}} y {{num2}} es: {{ resultado }}</h5>
+            {% endif %}
+        </div>
+        <button id="reiniciar">Reiniciar</button>
+    </div>
+    
+</body>
+
+
+</html>
